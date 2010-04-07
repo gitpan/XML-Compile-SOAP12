@@ -1,8 +1,12 @@
 
 === version history of XML::Compile::SOAP12
 
+version 2.01: Wed Apr  7 13:20:12 CEST 2010
+	- add ::SOAP12::Operation
+	- make $wsdl->printIndex usable for XML::Compile::WSDL11
+
 version 2.00: Thu Feb 12 10:27:06 CET 2009
 
 	- split-off from XML::Compile::SOAP.
-	  Unusabled!
+	  Unusable!
 

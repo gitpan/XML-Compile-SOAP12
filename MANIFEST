@@ -6,6 +6,8 @@ lib/XML/Compile/SOAP12.pm
 lib/XML/Compile/SOAP12.pod
 lib/XML/Compile/SOAP12/Client.pm
 lib/XML/Compile/SOAP12/Client.pod
+lib/XML/Compile/SOAP12/Operation.pm
+lib/XML/Compile/SOAP12/Operation.pod
 lib/XML/Compile/SOAP12/Server.pm
 lib/XML/Compile/SOAP12/Server.pod
 lib/XML/Compile/SOAP12/Util.pm
