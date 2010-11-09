@@ -1,6 +1,10 @@
 
 === version history of XML::Compile::SOAP12
 
+version 2.02: Tue Nov  9 13:07:56 CET 2010
+	- XML::Compile::Operation got renamed to
+	  XML::Compile::SOAP::Operation.
+
 version 2.01: Wed Apr  7 13:20:12 CEST 2010
 	- add ::SOAP12::Operation
 	- make $wsdl->printIndex usable for XML::Compile::WSDL11

@@ -11,9 +11,9 @@ use strict;
 
 package XML::Compile::SOAP12::Operation;
 use vars '$VERSION';
-$VERSION = '2.01';
+$VERSION = '2.02';
 
-use base 'XML::Compile::Operation';
+use base 'XML::Compile::SOAP::Operation';
 
 use Log::Report    'xml-compile-soap12', syntax => 'SHORT';
 use List::Util     'first';
@@ -250,6 +250,8 @@ sub compileClient(@)
       , transport    => $self->compileTransporter(%args)
       );
 }
+
+#-------------------
 
 
 sub explain($$$@)
