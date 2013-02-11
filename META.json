@@ -1,0 +1,50 @@
+{
+   "abstract" : "SOAP version 1.2",
+   "author" : [
+      "Mark Overmeer"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120630",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "XML-Compile-SOAP12",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "File::Basename" : "0",
+            "Log::Report" : "0.17",
+            "Test::Deep" : "0.095",
+            "Test::More" : "0.54",
+            "Test::Pod" : "1.00",
+            "Time::HiRes" : "0",
+            "XML::Compile" : "1.01",
+            "XML::Compile::Cache" : "0.91",
+            "XML::Compile::SOAP" : "2.00",
+            "XML::Compile::Tester" : "0.05"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "2.03"
+}

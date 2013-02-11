@@ -11,8 +11,6 @@ XML::Compile::SOAP12::Server - SOAP1.2 server needs
  XML::Compile::SOAP12::Server
    is a XML::Compile::SOAP::Server
 
-=head1 SYNOPSIS
-
 =head1 DESCRIPTION
 
 Thos module does not implement an actual soap server daemon, but the
@@ -21,17 +19,17 @@ by L<XML::Compile::SOAP::Daemon|XML::Compile::SOAP::Daemon>.
 
 =head1 METHODS
 
-$obj-E<gt>B<prepareServer>(SERVER)
-
 =over 4
+
+=item $obj-E<gt>B<prepareServer>(SERVER)
 
 =back
 
 =head2 Constructors
 
-$obj-E<gt>B<new>(OPTIONS)
-
 =over 4
+
+=item $obj-E<gt>B<new>(OPTIONS)
 
 See L<XML::Compile::SOAP12/"Constructors">
 
@@ -39,9 +37,9 @@ See L<XML::Compile::SOAP12/"Constructors">
 
 =head2 Instantiation
 
-XML::Compile::SOAP12::Server-E<gt>B<new>(OPTIONS)
-
 =over 4
+
+=item XML::Compile::SOAP12::Server-E<gt>B<new>(OPTIONS)
 
 See L<XML::Compile::SOAP::Server/"Instantiation">
 
@@ -49,33 +47,21 @@ See L<XML::Compile::SOAP::Server/"Instantiation">
 
 =head2 Accessors
 
-$obj-E<gt>B<name>
-
 =over 4
+
+=item $obj-E<gt>B<name>()
 
 See L<XML::Compile::SOAP/"Accessors">
 
-=back
-
-$obj-E<gt>B<role>
-
-=over 4
+=item $obj-E<gt>B<role>()
 
 See L<XML::Compile::SOAP::Server/"Accessors">
 
-=back
-
-$obj-E<gt>B<schemas>
-
-=over 4
+=item $obj-E<gt>B<schemas>()
 
 See L<XML::Compile::SOAP/"Accessors">
 
-=back
-
-$obj-E<gt>B<version>
-
-=over 4
+=item $obj-E<gt>B<version>()
 
 See L<XML::Compile::SOAP/"Accessors">
 
@@ -83,19 +69,15 @@ See L<XML::Compile::SOAP/"Accessors">
 
 =head2 Single message
 
-$obj-E<gt>B<compileMessage>(('SENDER'|'RECEIVER'), OPTIONS)
-
 =over 4
+
+=item $obj-E<gt>B<compileMessage>(('SENDER'|'RECEIVER'), OPTIONS)
 
 See L<XML::Compile::SOAP/"Single message">
 
-=back
+=item $obj-E<gt>B<messageStructure>(XML)
 
-$obj-E<gt>B<messageStructure>(XML)
-
-XML::Compile::SOAP12::Server-E<gt>B<messageStructure>(XML)
-
-=over 4
+=item XML::Compile::SOAP12::Server-E<gt>B<messageStructure>(XML)
 
 See L<XML::Compile::SOAP/"Single message">
 
@@ -105,25 +87,17 @@ See L<XML::Compile::SOAP/"Single message">
 
 =head2 Transcoding
 
-$obj-E<gt>B<replyMustUnderstandFault>(TYPE)
-
 =over 4
+
+=item $obj-E<gt>B<replyMustUnderstandFault>(TYPE)
 
 See L<XML::Compile::SOAP/"Transcoding">
 
-=back
-
-$obj-E<gt>B<roleAbbreviation>(URI)
-
-=over 4
+=item $obj-E<gt>B<roleAbbreviation>(URI)
 
 See L<XML::Compile::SOAP/"Transcoding">
 
-=back
-
-$obj-E<gt>B<roleURI>(URI|STRING)
-
-=over 4
+=item $obj-E<gt>B<roleURI>(URI|STRING)
 
 See L<XML::Compile::SOAP/"Transcoding">
 
@@ -131,36 +105,26 @@ See L<XML::Compile::SOAP/"Transcoding">
 
 =head2 Actions
 
-$obj-E<gt>B<compileFilter>(OPTIONS)
-
 =over 4
+
+=item $obj-E<gt>B<compileFilter>(OPTIONS)
+
+See L<XML::Compile::SOAP::Server/"Actions">
+
+=item $obj-E<gt>B<compileHandler>(OPTIONS)
+
+See L<XML::Compile::SOAP::Server/"Actions">
+
+=item XML::Compile::SOAP12::Server-E<gt>B<faultWriter>()
 
 See L<XML::Compile::SOAP::Server/"Actions">
 
 =back
-
-$obj-E<gt>B<compileHandler>(OPTIONS)
-
-=over 4
-
-See L<XML::Compile::SOAP::Server/"Actions">
-
-=back
-
-XML::Compile::SOAP12::Server-E<gt>B<faultWriter>
-
-=over 4
-
-See L<XML::Compile::SOAP::Server/"Actions">
-
-=back
-
-=head1 DETAILS
 
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.02,
-built on November 09, 2010. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 2.03,
+built on February 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
@@ -168,6 +132,9 @@ L<XML::Compile::SOAP>,
 L<XML::Compile::SOAP12>,
 L<XML::Compile::SOAP::Daemon>,
 L<XML::Compile::SOAP::WSA>,
+L<XML::Compile::C14N>,
+L<XML::Compile::WSS>,
+L<XML::Compile::WSS::Signature>,
 L<XML::Compile::Tester>,
 L<XML::Compile::Cache>,
 L<XML::Compile::Dumper>,
@@ -179,12 +146,13 @@ L<XML::LibXML::Simple>.
 
 Please post questions or ideas to the mailinglist at
 F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile>
+
 For live contact with other developers, visit the C<#xml-compile> channel
 on C<irc.perl.org>.
 
 =head1 LICENSE
 
-Copyrights 2009-2010 by Mark Overmeer. For other contributors see ChangeLog.
+Copyrights 2009-2013 by [Mark Overmeer]. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

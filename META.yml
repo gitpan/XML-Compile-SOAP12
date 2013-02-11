@@ -1,31 +1,31 @@
---- #YAML:1.0
-name:               XML-Compile-SOAP12
-version:            2.02
-abstract:           SOAP version 1.2
+---
+abstract: 'SOAP version 1.2'
 author:
-    - Mark Overmeer
-license:            perl
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Mark Overmeer'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:
-    File::Basename:       0
-    Log::Report:          0.17
-    Test::Deep:           0.095
-    Test::More:           0.54
-    Test::Pod:            1.00
-    Time::HiRes:          0
-    XML::Compile:         1.01
-    XML::Compile::Cache:  0.91
-    XML::Compile::SOAP:   2.00
-    XML::Compile::Tester:  0.05
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120630'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: XML-Compile-SOAP12
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  File::Basename: 0
+  Log::Report: 0.17
+  Test::Deep: 0.095
+  Test::More: 0.54
+  Test::Pod: 1.00
+  Time::HiRes: 0
+  XML::Compile: 1.01
+  XML::Compile::Cache: 0.91
+  XML::Compile::SOAP: 2.00
+  XML::Compile::Tester: 0.05
+version: 2.03

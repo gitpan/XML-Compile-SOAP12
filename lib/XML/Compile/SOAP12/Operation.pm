@@ -1,7 +1,7 @@
-# Copyrights 2009-2010 by Mark Overmeer.
+# Copyrights 2009-2013 by [Mark Overmeer].
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 1.06.
+# Pod stripped from pm file by OODoc 2.01.
 use warnings;
 use strict;
 
@@ -11,7 +11,7 @@ use strict;
 
 package XML::Compile::SOAP12::Operation;
 use vars '$VERSION';
-$VERSION = '2.02';
+$VERSION = '2.03';
 
 use base 'XML::Compile::SOAP::Operation';
 

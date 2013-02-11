@@ -19,4 +19,5 @@ lib/XML/Compile/WSDL11/xsd/wsdl-soap12.xsd
 t/01use.t
 t/99pod.t
 t/TestTools.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
