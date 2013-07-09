@@ -7,7 +7,7 @@ use strict;
 
 package XML::Compile::SOAP12;
 use vars '$VERSION';
-$VERSION = '2.03';
+$VERSION = '2.04';
 
 use base 'XML::Compile::SOAP';
 
@@ -43,12 +43,12 @@ sub _initSOAP12($)
     return $self
         if exists $schemas->prefixes->{env};
 
-    $schemas->importDefinitions([SOAP12ENC, SOAP12ENV, SOAP12RPC]);
     $schemas->addKeyRewrite('PREFIXES(soap12)');
 
     $schemas->prefixes
       ( soap12env => SOAP12ENV  # preferred names by spec
       , soap12enc => SOAP12ENC
+      , soap12rpc => SOAP12RPC
       , xsd       => SCHEMA2001
       );
 

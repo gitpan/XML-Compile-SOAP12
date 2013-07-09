@@ -11,7 +11,7 @@ use strict;
 
 package XML::Compile::SOAP12::Operation;
 use vars '$VERSION';
-$VERSION = '2.03';
+$VERSION = '2.04';
 
 use base 'XML::Compile::SOAP::Operation';
 
@@ -55,9 +55,13 @@ sub _initWSDL11($)
     $wsdl->prefixes(soap12 => WSDL11SOAP12);
     $wsdl->addKeyRewrite('PREFIXED(soap12)');
 
-    my $dir = dirname __FILE__;
-    my @xsd = (glob("$dir/xsd/*"), glob("$dir/../WSDL11/xsd/wsdl-soap12.xsd"));
-    $wsdl->importDefinitions(\@xsd);
+    my $dir = dirname dirname __FILE__;
+    my @xsd = ( "$dir/SOAP12/xsd/2003-soap-rpc.xsd"
+              , "$dir/SOAP12/xsd/2003-soap-envelope.xsd"
+              , "$dir/SOAP12/xsd/2003-soap-encoding.xsd"
+              , "$dir/WSDL11/xsd/wsdl-soap12.xsd"
+              );
+    $wsdl->importDefinitions(\@xsd, element_form_default => 'qualified');
 
     $wsdl->declare(READER =>
       [ "soap12:address", "soap12:operation", "soap12:binding"

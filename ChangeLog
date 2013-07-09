@@ -1,6 +1,10 @@
 
 === version history of XML::Compile::SOAP12
 
+version 2.04: Tue Jul  9 18:02:15 CEST 2013
+	- enforce schema's to have elementFromDefault='qualified'
+	- move t/99pod.t to xt/  and drop dependency to Test::Pod
+
 version 2.03: Mon Feb 11 10:48:25 CET 2013
 	- try to get sponsorship to complete this module.
 

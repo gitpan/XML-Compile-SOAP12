@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 0
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120630'
+generated_by: 'ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120630'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,13 +19,12 @@ no_index:
     - inc
 requires:
   File::Basename: 0
-  Log::Report: 0.17
+  Log::Report: 0.90
   Test::Deep: 0.095
   Test::More: 0.54
-  Test::Pod: 1.00
   Time::HiRes: 0
-  XML::Compile: 1.01
+  XML::Compile: 1.35
   XML::Compile::Cache: 0.91
-  XML::Compile::SOAP: 2.00
+  XML::Compile::SOAP: 2.37
   XML::Compile::Tester: 0.05
-version: 2.03
+version: 2.04

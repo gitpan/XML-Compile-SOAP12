@@ -17,7 +17,7 @@ lib/XML/Compile/SOAP12/xsd/2003-soap-envelope.xsd
 lib/XML/Compile/SOAP12/xsd/2003-soap-rpc.xsd
 lib/XML/Compile/WSDL11/xsd/wsdl-soap12.xsd
 t/01use.t
-t/99pod.t
 t/TestTools.pm
+xt/99pod.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

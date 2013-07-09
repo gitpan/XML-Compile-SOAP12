@@ -1,3 +1,5 @@
+=encoding utf8
+
 =head1 NAME
 
 XML::Compile::SOAP12::Operation - defines a SOAP12 interaction
@@ -19,10 +21,16 @@ XML::Compile::SOAP12::Operation - defines a SOAP12 interaction
 Objects of this type define one possible SOAP12 interaction, either
 client side or server side.
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"DESCRIPTION">.
+ 
 =head1 METHODS
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"METHODS">.
+ 
 =head2 Constructors
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"Constructors">.
+ 
 =over 4
 
 =item XML::Compile::SOAP12::Operation-E<gt>B<new>(OPTIONS)
@@ -71,6 +79,8 @@ in WSDL1.1 style.
 
 =head2 Accessors
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"Accessors">.
+ 
 =over 4
 
 =item $obj-E<gt>B<bindingName>()
@@ -127,6 +137,8 @@ See L<XML::Compile::SOAP::Operation/"Accessors">
 
 =head2 Handlers
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"Handlers">.
+ 
 =over 4
 
 =item $obj-E<gt>B<compileClient>(OPTIONS)
@@ -173,6 +185,8 @@ See L<XML::Compile::SOAP::Operation/"Handlers">
 
 =head2 Helpers
 
+See L<documentation in base class|XML::Compile::SOAP::Operation/"Helpers">.
+ 
 =over 4
 
 =item $obj-E<gt>B<explain>(WSDL, FORMAT, DIRECTION, OPTIONS)
@@ -210,8 +224,8 @@ See L<XML::Compile::SOAP::Operation/"Helpers">
 
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.03,
-built on February 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 2.04,
+built on July 09, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
@@ -226,14 +240,12 @@ L<XML::Compile::Tester>,
 L<XML::Compile::Cache>,
 L<XML::Compile::Dumper>,
 L<XML::Compile::RPC>,
-L<XML::Rewrite>,
-L<XML::eXistDB>,
+L<XML::Rewrite>
 and
 L<XML::LibXML::Simple>.
 
 Please post questions or ideas to the mailinglist at
-F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile>
-
+F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
 For live contact with other developers, visit the C<#xml-compile> channel
 on C<irc.perl.org>.
 

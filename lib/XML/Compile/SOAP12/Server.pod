@@ -1,3 +1,5 @@
+=encoding utf8
+
 =head1 NAME
 
 XML::Compile::SOAP12::Server - SOAP1.2 server needs
@@ -11,120 +13,38 @@ XML::Compile::SOAP12::Server - SOAP1.2 server needs
  XML::Compile::SOAP12::Server
    is a XML::Compile::SOAP::Server
 
+=head1 SYNOPSIS
+
 =head1 DESCRIPTION
 
 Thos module does not implement an actual soap server daemon, but the
 needs to create the server side.  The server daemon is implemented
 by L<XML::Compile::SOAP::Daemon|XML::Compile::SOAP::Daemon>.
 
+See L<documentation in base class|XML::Compile::SOAP::Server/"DESCRIPTION">.
+ 
+See L<documentation in base class|XML::Compile::SOAP12/"DESCRIPTION">.
+ 
 =head1 METHODS
 
+See L<documentation in base class|XML::Compile::SOAP::Server/"METHODS">.
+ 
+See L<documentation in base class|XML::Compile::SOAP12/"METHODS">.
+ 
 =over 4
 
 =item $obj-E<gt>B<prepareServer>(SERVER)
 
 =back
 
-=head2 Constructors
+=head1 DETAILS
 
-=over 4
-
-=item $obj-E<gt>B<new>(OPTIONS)
-
-See L<XML::Compile::SOAP12/"Constructors">
-
-=back
-
-=head2 Instantiation
-
-=over 4
-
-=item XML::Compile::SOAP12::Server-E<gt>B<new>(OPTIONS)
-
-See L<XML::Compile::SOAP::Server/"Instantiation">
-
-=back
-
-=head2 Accessors
-
-=over 4
-
-=item $obj-E<gt>B<name>()
-
-See L<XML::Compile::SOAP/"Accessors">
-
-=item $obj-E<gt>B<role>()
-
-See L<XML::Compile::SOAP::Server/"Accessors">
-
-=item $obj-E<gt>B<schemas>()
-
-See L<XML::Compile::SOAP/"Accessors">
-
-=item $obj-E<gt>B<version>()
-
-See L<XML::Compile::SOAP/"Accessors">
-
-=back
-
-=head2 Single message
-
-=over 4
-
-=item $obj-E<gt>B<compileMessage>(('SENDER'|'RECEIVER'), OPTIONS)
-
-See L<XML::Compile::SOAP/"Single message">
-
-=item $obj-E<gt>B<messageStructure>(XML)
-
-=item XML::Compile::SOAP12::Server-E<gt>B<messageStructure>(XML)
-
-See L<XML::Compile::SOAP/"Single message">
-
-=back
-
-=head2 Helpers
-
-=head2 Transcoding
-
-=over 4
-
-=item $obj-E<gt>B<replyMustUnderstandFault>(TYPE)
-
-See L<XML::Compile::SOAP/"Transcoding">
-
-=item $obj-E<gt>B<roleAbbreviation>(URI)
-
-See L<XML::Compile::SOAP/"Transcoding">
-
-=item $obj-E<gt>B<roleURI>(URI|STRING)
-
-See L<XML::Compile::SOAP/"Transcoding">
-
-=back
-
-=head2 Actions
-
-=over 4
-
-=item $obj-E<gt>B<compileFilter>(OPTIONS)
-
-See L<XML::Compile::SOAP::Server/"Actions">
-
-=item $obj-E<gt>B<compileHandler>(OPTIONS)
-
-See L<XML::Compile::SOAP::Server/"Actions">
-
-=item XML::Compile::SOAP12::Server-E<gt>B<faultWriter>()
-
-See L<XML::Compile::SOAP::Server/"Actions">
-
-=back
-
+See L<documentation in base class|XML::Compile::SOAP12/"DETAILS">.
+ 
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.03,
-built on February 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 2.04,
+built on July 09, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
@@ -139,14 +59,12 @@ L<XML::Compile::Tester>,
 L<XML::Compile::Cache>,
 L<XML::Compile::Dumper>,
 L<XML::Compile::RPC>,
-L<XML::Rewrite>,
-L<XML::eXistDB>,
+L<XML::Rewrite>
 and
 L<XML::LibXML::Simple>.
 
 Please post questions or ideas to the mailinglist at
-F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile>
-
+F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
 For live contact with other developers, visit the C<#xml-compile> channel
 on C<irc.perl.org>.
 
