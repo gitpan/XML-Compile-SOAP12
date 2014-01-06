@@ -1,15 +1,17 @@
 use ExtUtils::MakeMaker;
 
-use 5.008;
+use 5.010;
+
+my $version = '3.00';
 
 WriteMakefile
  ( NAME	 	=> 'XML::Compile::SOAP12'
- , VERSION	=> '2.04'
+ , VERSION	=> $version
  , PREREQ_PM    =>
-   { XML::Compile         => '1.35'
+   { XML::Compile         => '1.40'
    , XML::Compile::Tester => '0.05'
-   , XML::Compile::Cache  => '0.91'
-   , XML::Compile::SOAP   => '2.37'
+   , XML::Compile::Cache  => '0.995'
+   , XML::Compile::SOAP   => '3.00'
    , Log::Report          => '0.90'
 
    , Time::HiRes     => 0

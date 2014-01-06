@@ -21,15 +21,15 @@ Thos module does not implement an actual soap server daemon, but the
 needs to create the server side.  The server daemon is implemented
 by L<XML::Compile::SOAP::Daemon|XML::Compile::SOAP::Daemon>.
 
-See L<documentation in base class|XML::Compile::SOAP::Server/"DESCRIPTION">.
+See L<documentation in the base class|XML::Compile::SOAP::Server/"DESCRIPTION">.
  
-See L<documentation in base class|XML::Compile::SOAP12/"DESCRIPTION">.
+See L<documentation in the base class|XML::Compile::SOAP12/"DESCRIPTION">.
  
 =head1 METHODS
 
-See L<documentation in base class|XML::Compile::SOAP::Server/"METHODS">.
+See L<documentation in the base class|XML::Compile::SOAP::Server/"METHODS">.
  
-See L<documentation in base class|XML::Compile::SOAP12/"METHODS">.
+See L<documentation in the base class|XML::Compile::SOAP12/"METHODS">.
  
 =over 4
 
@@ -39,16 +39,17 @@ See L<documentation in base class|XML::Compile::SOAP12/"METHODS">.
 
 =head1 DETAILS
 
-See L<documentation in base class|XML::Compile::SOAP12/"DETAILS">.
+See L<documentation in the base class|XML::Compile::SOAP12/"DETAILS">.
  
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.04,
-built on July 09, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.00,
+built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
 L<XML::Compile::SOAP>,
+L<XML::Compile::WSDL11>,
 L<XML::Compile::SOAP12>,
 L<XML::Compile::SOAP::Daemon>,
 L<XML::Compile::SOAP::WSA>,
@@ -70,7 +71,7 @@ on C<irc.perl.org>.
 
 =head1 LICENSE
 
-Copyrights 2009-2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+Copyrights 2009-2014 by [Mark Overmeer]. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

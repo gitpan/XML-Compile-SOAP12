@@ -11,25 +11,24 @@ XML::Compile::SOAP12::Operation - defines a SOAP12 interaction
 
 =head1 SYNOPSIS
 
- ### Don't use this (yet!!!)  not completed!!!
-
  # object created by XML::Compile::WSDL*
  my $op = $wsdl->operation('GetStockPrices');
+ $op->explain($wsdl, PERL => 'INPUT', recurse => 1);
 
 =head1 DESCRIPTION
 
 Objects of this type define one possible SOAP12 interaction, either
 client side or server side.
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"DESCRIPTION">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"DESCRIPTION">.
  
 =head1 METHODS
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"METHODS">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"METHODS">.
  
 =head2 Constructors
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"Constructors">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"Constructors">.
  
 =over 4
 
@@ -79,7 +78,7 @@ in WSDL1.1 style.
 
 =head2 Accessors
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"Accessors">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"Accessors">.
  
 =over 4
 
@@ -135,16 +134,51 @@ See L<XML::Compile::SOAP::Operation/"Accessors">
 
 =back
 
+=head2 Modify
+
+Operations are often modified by SOAP extensions.
+See XML::Compile::SOAP::WSA, for instance. Also demonstrated in
+the FAQ, L<XML::Compile::SOAP::FAQ|XML::Compile::SOAP::FAQ>.
+
+=over 4
+
+=item $obj-E<gt>B<addHeader>(('INPUT'|'OUTPUT'|'FAULT'), LABEL, ELEMENT, OPTIONS)
+
+Add a header definitions.  Many protocols on top of SOAP, like WSS, add
+headers to the operations which are not specified in the WSDL.
+
+When you add a header with same LABEL again, it will get silently
+ignored unless the ELEMENT type differs.  An ELEMENT is either a full
+type or a prefixed type.
+
+ -Option        --Default
+  destination     undef
+  mustUnderstand  undef
+
+=over 2
+
+=item destination => ROLE
+
+Adds the destination attribute,
+
+=item mustUnderstand => BOOLEAN
+
+Adds the mustUnderstand attribute.
+
+=back
+
+=back
+
 =head2 Handlers
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"Handlers">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"Handlers">.
  
 =over 4
 
 =item $obj-E<gt>B<compileClient>(OPTIONS)
 
 Returns one CODE reference which handles the processing for this
-operation.  Options C<transporter>, C<transport_hook>, and
+operation. Options C<transporter>, C<transport_hook>, and
 C<endpoint> are passed to L<compileTransporter()|XML::Compile::SOAP::Operation/"Handlers">.
 
 You pass that CODE reference an input message of the correct
@@ -153,15 +187,17 @@ will return then answer, or C<undef> in case of failure.  An 'one-way'
 operation with return C<undef> in case of failure, and a true value
 when successfull.
 
-Besides the OPTIONS listed, you can also specify anything which is
-accepted by L<XML::Compile::Schema::compile()|XML::Compile::Schema/"Compilers">, like
-C<< sloppy_integers => 1 >> or hooks.
+You B<cannot> pass options for L<XML::Compile::Schema::compile()|XML::Compile::Schema/"Compilers">, like
+C<<sloppy_integers => 0>>, hooks or typemaps this way. Provide these to
+the C<::WSDL> or other C<::Cache> object which defines the types, via
+C<new> option C<opts_rw> and friends.
 
 =item $obj-E<gt>B<compileHandler>(OPTIONS)
 
 Prepare the routines which will decode the request and encode the answer,
 as will be run on the server. The L<XML::Compile::SOAP::Server|XML::Compile::SOAP::Server> will
-connect these.
+connect these. All OPTIONS will get passed to
+L<XML::Compile::SOAP12::Server::compileHandler()|XML::Compile::SOAP::Server/"Actions">
 
  -Option  --Default
   callback  <required>
@@ -185,15 +221,17 @@ See L<XML::Compile::SOAP::Operation/"Handlers">
 
 =head2 Helpers
 
-See L<documentation in base class|XML::Compile::SOAP::Operation/"Helpers">.
+See L<documentation in the base class|XML::Compile::SOAP::Operation/"Helpers">.
  
 =over 4
 
 =item $obj-E<gt>B<explain>(WSDL, FORMAT, DIRECTION, OPTIONS)
 
+[since 2.13]
+
 Dump an annotated structure showing how the operation works, helping
-developers to understand the schema. FORMAT is always C<PERL>: C<XML>
-is not yet supported.
+developers to understand the schema. FORMAT is C<PERL>.
+(C<XML> is not yet supported)
 
 The DIRECTION is C<INPUT>, it will return the message which the client
 sends to the server (input for the server). The C<OUTPUT> message is
@@ -216,20 +254,37 @@ Append the templates of all the part structures.
 
 =back
 
-=item XML::Compile::SOAP12::Operation-E<gt>B<register>(URI, ENVNS)
+=item $obj-E<gt>B<parsedWSDL>()
 
-See L<XML::Compile::SOAP::Operation/"Helpers">
+[2.29] For some purposes, it is useful to get access to the parsed WSDL
+structure.
+
+B<Be aware> that the structure returned is consided "internal"
+and strongly influenced by behavior of L<XML::Compile|XML::Compile>; backwards
+compatibility will not be maintained at all cost.
+
+You can use L<XML::Compile::Schema::template()|XML::Compile::Schema/"Compilers"> format C<TREE> to get
+more details about the element types mentioned in this structure.
+
+example: 
+
+  use Data::Dumper;
+  $Data::Dumper::Indent    = 1;
+  $Data::Dumper::Quotekeys = 0;
+
+  print Dumper $op->parsedWSDL;
 
 =back
 
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.04,
-built on July 09, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.00,
+built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
 L<XML::Compile::SOAP>,
+L<XML::Compile::WSDL11>,
 L<XML::Compile::SOAP12>,
 L<XML::Compile::SOAP::Daemon>,
 L<XML::Compile::SOAP::WSA>,
@@ -251,7 +306,7 @@ on C<irc.perl.org>.
 
 =head1 LICENSE
 
-Copyrights 2009-2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+Copyrights 2009-2014 by [Mark Overmeer]. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

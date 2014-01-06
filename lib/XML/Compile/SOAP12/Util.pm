@@ -1,4 +1,4 @@
-# Copyrights 2009-2013 by [Mark Overmeer].
+# Copyrights 2009-2014 by [Mark Overmeer].
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
 # Pod stripped from pm file by OODoc 2.01.
@@ -8,7 +8,7 @@ use strict;
 
 package XML::Compile::SOAP12::Util;
 use vars '$VERSION';
-$VERSION = '2.04';
+$VERSION = '3.00';
 
 use base 'Exporter';
 
@@ -36,7 +36,7 @@ our %EXPORT_TAGS =
   );
 
 
-use constant SOAP12 => 'http://www.w3c.org/2003/05/';
+use constant SOAP12 => 'http://www.w3.org/2003/05/';
 
 use constant
  { SOAP12ENV      => SOAP12.'soap-envelope'

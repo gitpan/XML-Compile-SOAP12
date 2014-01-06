@@ -23,8 +23,8 @@ requires:
   Test::Deep: 0.095
   Test::More: 0.54
   Time::HiRes: 0
-  XML::Compile: 1.35
-  XML::Compile::Cache: 0.91
-  XML::Compile::SOAP: 2.37
+  XML::Compile: 1.40
+  XML::Compile::Cache: 0.995
+  XML::Compile::SOAP: 3.00
   XML::Compile::Tester: 0.05
-version: 2.04
+version: 3.00

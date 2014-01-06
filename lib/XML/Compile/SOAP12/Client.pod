@@ -17,21 +17,21 @@ XML::Compile::SOAP12::Client - SOAP1.2 client needs
 
 =head1 DESCRIPTION
 
-See L<documentation in base class|XML::Compile::SOAP::Client/"DESCRIPTION">.
+See L<documentation in the base class|XML::Compile::SOAP::Client/"DESCRIPTION">.
  
-See L<documentation in base class|XML::Compile::SOAP12/"DESCRIPTION">.
+See L<documentation in the base class|XML::Compile::SOAP12/"DESCRIPTION">.
  
 =head1 METHODS
 
-See L<documentation in base class|XML::Compile::SOAP::Client/"METHODS">.
+See L<documentation in the base class|XML::Compile::SOAP::Client/"METHODS">.
  
-See L<documentation in base class|XML::Compile::SOAP12/"METHODS">.
+See L<documentation in the base class|XML::Compile::SOAP12/"METHODS">.
  
 =head2 Constructors
 
-See L<documentation in base class|XML::Compile::SOAP::Client/"Constructors">.
+See L<documentation in the base class|XML::Compile::SOAP::Client/"Constructors">.
  
-See L<documentation in base class|XML::Compile::SOAP12/"Constructors">.
+See L<documentation in the base class|XML::Compile::SOAP12/"Constructors">.
  
 =over 4
 
@@ -52,15 +52,19 @@ See L<documentation in base class|XML::Compile::SOAP12/"Constructors">.
 
 =back
 
+=item XML::Compile::SOAP12::Client-E<gt>B<register>(URI, ENVNS)
+
+See L<XML::Compile::SOAP/"Constructors">
+
 =back
 
 =head2 Accessors
 
-See L<documentation in base class|XML::Compile::SOAP12/"Accessors">.
+See L<documentation in the base class|XML::Compile::SOAP12/"Accessors">.
  
 =over 4
 
-=item $obj-E<gt>B<name>()
+=item $obj-E<gt>B<mediaType>()
 
 See L<XML::Compile::SOAP/"Accessors">
 
@@ -76,13 +80,13 @@ See L<XML::Compile::SOAP/"Accessors">
 
 =head2 Single message
 
-See L<documentation in base class|XML::Compile::SOAP12/"Single message">.
+See L<documentation in the base class|XML::Compile::SOAP12/"Single message">.
  
 =over 4
 
 =item $obj-E<gt>B<compileMessage>(('SENDER'|'RECEIVER'), OPTIONS)
 
-See L<XML::Compile::SOAP/"Single message">
+See L<XML::Compile::SOAP12/"Single message">
 
 =item $obj-E<gt>B<messageStructure>(XML)
 
@@ -94,11 +98,11 @@ See L<XML::Compile::SOAP/"Single message">
 
 =head2 Helpers
 
-See L<documentation in base class|XML::Compile::SOAP12/"Helpers">.
+See L<documentation in the base class|XML::Compile::SOAP12/"Helpers">.
  
 =head2 Transcoding
 
-See L<documentation in base class|XML::Compile::SOAP12/"Transcoding">.
+See L<documentation in the base class|XML::Compile::SOAP12/"Transcoding">.
  
 =over 4
 
@@ -118,7 +122,7 @@ See L<XML::Compile::SOAP/"Transcoding">
 
 =head2 Handlers
 
-See L<documentation in base class|XML::Compile::SOAP::Client/"Handlers">.
+See L<documentation in the base class|XML::Compile::SOAP::Client/"Handlers">.
  
 =over 4
 
@@ -130,16 +134,17 @@ See L<XML::Compile::SOAP::Client/"Handlers">
 
 =head1 DETAILS
 
-See L<documentation in base class|XML::Compile::SOAP12/"DETAILS">.
+See L<documentation in the base class|XML::Compile::SOAP12/"DETAILS">.
  
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 2.04,
-built on July 09, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.00,
+built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,
 L<XML::Compile::SOAP>,
+L<XML::Compile::WSDL11>,
 L<XML::Compile::SOAP12>,
 L<XML::Compile::SOAP::Daemon>,
 L<XML::Compile::SOAP::WSA>,
@@ -161,7 +166,7 @@ on C<irc.perl.org>.
 
 =head1 LICENSE
 
-Copyrights 2009-2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+Copyrights 2009-2014 by [Mark Overmeer]. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
