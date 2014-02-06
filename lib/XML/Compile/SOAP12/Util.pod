@@ -59,8 +59,8 @@ C<SOAP12MEPOUT>, C<SOAP12MEPIN>, C<SOAP12MEPDEST>, C<SOAP12MEPSEND>
 
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 3.00,
-built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.01,
+built on February 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,

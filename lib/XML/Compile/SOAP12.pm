@@ -6,8 +6,7 @@ use warnings;
 use strict;
 
 package XML::Compile::SOAP12;
-use vars '$VERSION';
-$VERSION = '3.00';
+our $VERSION = '3.01';
 
 use base 'XML::Compile::SOAP';
 
@@ -169,6 +168,17 @@ sub _sender(@)
           , headers => [keys %destination];
     }
 
+    # faults are always possible
+    my @bparts  = @{$args{body}{parts} || []};
+    my $w = $self->schemas->writer('env12:Fault'
+      , include_namespaces => sub {$_[0] ne SOAP12ENV && $_[2]}
+      );
+    push @bparts,
+      { name    => 'Fault'
+      , element => pack_type(SOAP12ENV, 'Fault')
+      , writer  => $w
+      };
+    local $args{body}{parts} = \@bparts;
 
     $self->SUPER::_sender(%args);
 }
@@ -197,11 +207,11 @@ sub _writer_header($)
         {   $actor =~ s/\b(\S+)\b/$self->roleURI($1)/ge }
 
         my $envpref = $self->schemas->prefixFor(SOAP12ENV);
-        my $wcode = $understand || $actor
+        my $wcode   = $understand || $actor
          ? sub
            { my ($doc, $v) = @_;
              my $xml = $code->($doc, $v);
-             $xml->setAttribute("$envpref:mustUnderstand" => '1')
+             $xml->setAttribute("$envpref:mustUnderstand" => 'true')
                  if defined $understand;
              $xml->setAttribute("$envpref:actor" => $actor)
                  if $actor;
@@ -238,10 +248,10 @@ sub _writer_faults($)
         my $code = sub
           { my ($doc, $data)  = (shift, shift);
             my %copy = %$data;
-            $copy{faultactor} = $self->roleURI($copy{faultactor});
-            my $det = delete $copy{detail};
-            my @det = !defined $det ? () : ref $det eq 'ARRAY' ? @$det : $det;
-            $copy{detail}{$type} = [ map $details->($doc, $_), @det ];
+            $copy{Role} ||= $self->roleURI($copy{faultactor});
+            my $det  = delete $copy{Detail} || delete $copy{detail};
+            my @det  = !defined $det ? () : ref $det eq 'ARRAY' ? @$det : $det;
+            $copy{Detail}{$type} = [ map $details->($doc, $_), @det ];
             $wrfault->($doc, \%copy);
           };
 
@@ -352,8 +362,8 @@ sub replyMustUnderstandFault($)
 {   my ($self, $type) = @_;
 
    +{ Fault =>
-      { faultcode   => pack_type(SOAP12ENV, 'MustUnderstand')
-      , faultstring => "SOAP mustUnderstand $type"
+      { Code   => {Value => pack_type(SOAP12ENV, 'MustUnderstand') }
+      , Reason => {Text => {lang => 'en', _ => "SOAP mustUnderstand $type"}}
       }
     };
 }

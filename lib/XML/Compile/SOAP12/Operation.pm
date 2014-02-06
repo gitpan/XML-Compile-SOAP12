@@ -6,10 +6,12 @@ use warnings;
 use strict;
 
 package XML::Compile::SOAP12::Operation;
-use vars '$VERSION';
-$VERSION = '3.00';
+our $VERSION = '3.01';
 
 use base 'XML::Compile::SOAP::Operation';
+
+### Much of the code below looks like a copy of ::SOAP11::Operation,
+### but be warned: there are subtile differences.
 
 use Log::Report 'xml-compile-soap', syntax => 'SHORT';
 use List::Util  'first';
@@ -107,13 +109,7 @@ sub _msg_parts($$$$$)
     foreach my $header (ref $bsh eq 'ARRAY' ? @$bsh : $bsh)
     {   my $msgname  = $header->{message};
         my @parts    = $class->_select_parts($wsdl, $msgname, $header->{part});
-         push @{$parts{header}}, { %$header, parts => \@parts };
-
-        foreach my $fault ( @{$header->{headerfault} || []} )
-        {   $msgname = $fault->{message};
-            my @hf   = $class->_select_parts($wsdl, $msgname, $fault->{part});
-            push @{$parts{headerfault}}, { %$fault,  parts => \@hf };
-        }
+         push @{$parts{header}}, +{ %$header, parts => \@parts };
     }
     \%parts;
 }
@@ -181,6 +177,7 @@ sub _fault_parts($$$)
 
 
 sub style()     {shift->{style}}
+
 sub version()   { 'SOAP12' }
 sub serverClass { 'XML::Compile::SOAP12::Server' }
 sub clientClass { 'XML::Compile::SOAP12::Client' }
@@ -300,7 +297,7 @@ sub explain($$$@)
        : "# To explore the HASHes for each part, use recurse option.";
 
   HEAD_PART:
-    foreach my $header (@{$def->{header} || []})
+    foreach my $header ( @{$def->{header} || []} )
     {   foreach my $part ( @{$header->{parts} || []} )
         {   my $name = $part->{name};
             my ($kind, $value) = $part->{type} ? (type => $part->{type})
@@ -482,7 +479,6 @@ sub explain($$$@)
 
     join "\n", @header, @main, @postproc, @attach, '';
 }
-
 
 sub parsedWSDL()
 {   my $self = shift;

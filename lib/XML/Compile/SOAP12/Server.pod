@@ -17,34 +17,28 @@ XML::Compile::SOAP12::Server - SOAP1.2 server needs
 
 =head1 DESCRIPTION
 
-Thos module does not implement an actual soap server daemon, but the
+This module does not implement an actual soap server, but the
 needs to create the server side.  The server daemon is implemented
-by L<XML::Compile::SOAP::Daemon|XML::Compile::SOAP::Daemon>.
+by L<XML::Compile::SOAP::Daemon|XML::Compile::SOAP::Daemon>
 
-See L<documentation in the base class|XML::Compile::SOAP::Server/"DESCRIPTION">.
+Extends L<"DESCRIPTION" in XML::Compile::SOAP::Server|XML::Compile::SOAP::Server/"DESCRIPTION">.
  
-See L<documentation in the base class|XML::Compile::SOAP12/"DESCRIPTION">.
+Extends L<"DESCRIPTION" in XML::Compile::SOAP12|XML::Compile::SOAP12/"DESCRIPTION">.
  
 =head1 METHODS
 
-See L<documentation in the base class|XML::Compile::SOAP::Server/"METHODS">.
+Extends L<"METHODS" in XML::Compile::SOAP::Server|XML::Compile::SOAP::Server/"METHODS">.
  
-See L<documentation in the base class|XML::Compile::SOAP12/"METHODS">.
+Extends L<"METHODS" in XML::Compile::SOAP12|XML::Compile::SOAP12/"METHODS">.
  
-=over 4
-
-=item $obj-E<gt>B<prepareServer>(SERVER)
-
-=back
-
 =head1 DETAILS
 
-See L<documentation in the base class|XML::Compile::SOAP12/"DETAILS">.
+Extends L<"DETAILS" in XML::Compile::SOAP12|XML::Compile::SOAP12/"DETAILS">.
  
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 3.00,
-built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.01,
+built on February 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,

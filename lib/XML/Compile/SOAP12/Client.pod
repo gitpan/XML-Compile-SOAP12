@@ -17,25 +17,25 @@ XML::Compile::SOAP12::Client - SOAP1.2 client needs
 
 =head1 DESCRIPTION
 
-See L<documentation in the base class|XML::Compile::SOAP::Client/"DESCRIPTION">.
+Extends L<"DESCRIPTION" in XML::Compile::SOAP::Client|XML::Compile::SOAP::Client/"DESCRIPTION">.
  
-See L<documentation in the base class|XML::Compile::SOAP12/"DESCRIPTION">.
+Extends L<"DESCRIPTION" in XML::Compile::SOAP12|XML::Compile::SOAP12/"DESCRIPTION">.
  
 =head1 METHODS
 
-See L<documentation in the base class|XML::Compile::SOAP::Client/"METHODS">.
+Extends L<"METHODS" in XML::Compile::SOAP::Client|XML::Compile::SOAP::Client/"METHODS">.
  
-See L<documentation in the base class|XML::Compile::SOAP12/"METHODS">.
+Extends L<"METHODS" in XML::Compile::SOAP12|XML::Compile::SOAP12/"METHODS">.
  
 =head2 Constructors
 
-See L<documentation in the base class|XML::Compile::SOAP::Client/"Constructors">.
+Extends L<"Constructors" in XML::Compile::SOAP::Client|XML::Compile::SOAP::Client/"Constructors">.
  
-See L<documentation in the base class|XML::Compile::SOAP12/"Constructors">.
+Extends L<"Constructors" in XML::Compile::SOAP12|XML::Compile::SOAP12/"Constructors">.
  
 =over 4
 
-=item $obj-E<gt>B<new>(OPTIONS)
+=item $obj-E<gt>B<new>(%options)
 
  -Option      --Defined in          --Default
   header_fault  XML::Compile::SOAP12  error
@@ -52,94 +52,94 @@ See L<documentation in the base class|XML::Compile::SOAP12/"Constructors">.
 
 =back
 
-=item XML::Compile::SOAP12::Client-E<gt>B<register>(URI, ENVNS)
+=item XML::Compile::SOAP12::Client-E<gt>B<register>($uri, $envns)
 
-See L<XML::Compile::SOAP/"Constructors">
+Inherited, see L<XML::Compile::SOAP/"Constructors">
 
 =back
 
 =head2 Accessors
 
-See L<documentation in the base class|XML::Compile::SOAP12/"Accessors">.
+Extends L<"Accessors" in XML::Compile::SOAP12|XML::Compile::SOAP12/"Accessors">.
  
 =over 4
 
 =item $obj-E<gt>B<mediaType>()
 
-See L<XML::Compile::SOAP/"Accessors">
+Inherited, see L<XML::Compile::SOAP/"Accessors">
 
 =item $obj-E<gt>B<schemas>()
 
-See L<XML::Compile::SOAP/"Accessors">
+Inherited, see L<XML::Compile::SOAP/"Accessors">
 
 =item $obj-E<gt>B<version>()
 
-See L<XML::Compile::SOAP/"Accessors">
+Inherited, see L<XML::Compile::SOAP/"Accessors">
 
 =back
 
 =head2 Single message
 
-See L<documentation in the base class|XML::Compile::SOAP12/"Single message">.
+Extends L<"Single message" in XML::Compile::SOAP12|XML::Compile::SOAP12/"Single message">.
  
 =over 4
 
-=item $obj-E<gt>B<compileMessage>(('SENDER'|'RECEIVER'), OPTIONS)
+=item $obj-E<gt>B<compileMessage>( <'SENDER'|'RECEIVER'>, %options )
 
-See L<XML::Compile::SOAP12/"Single message">
+Inherited, see L<XML::Compile::SOAP12/"Single message">
 
-=item $obj-E<gt>B<messageStructure>(XML)
+=item $obj-E<gt>B<messageStructure>($xml)
 
-=item XML::Compile::SOAP12::Client-E<gt>B<messageStructure>(XML)
+=item XML::Compile::SOAP12::Client-E<gt>B<messageStructure>($xml)
 
-See L<XML::Compile::SOAP/"Single message">
+Inherited, see L<XML::Compile::SOAP/"Single message">
 
 =back
 
 =head2 Helpers
 
-See L<documentation in the base class|XML::Compile::SOAP12/"Helpers">.
+Extends L<"Helpers" in XML::Compile::SOAP12|XML::Compile::SOAP12/"Helpers">.
  
 =head2 Transcoding
 
-See L<documentation in the base class|XML::Compile::SOAP12/"Transcoding">.
+Extends L<"Transcoding" in XML::Compile::SOAP12|XML::Compile::SOAP12/"Transcoding">.
  
 =over 4
 
-=item $obj-E<gt>B<replyMustUnderstandFault>(TYPE)
+=item $obj-E<gt>B<replyMustUnderstandFault>($type)
 
-See L<XML::Compile::SOAP/"Transcoding">
+Inherited, see L<XML::Compile::SOAP/"Transcoding">
 
-=item $obj-E<gt>B<roleAbbreviation>(URI)
+=item $obj-E<gt>B<roleAbbreviation>($uri)
 
-See L<XML::Compile::SOAP/"Transcoding">
+Inherited, see L<XML::Compile::SOAP/"Transcoding">
 
-=item $obj-E<gt>B<roleURI>(URI|STRING)
+=item $obj-E<gt>B<roleURI>($uri|STRING)
 
-See L<XML::Compile::SOAP/"Transcoding">
+Inherited, see L<XML::Compile::SOAP/"Transcoding">
 
 =back
 
 =head2 Handlers
 
-See L<documentation in the base class|XML::Compile::SOAP::Client/"Handlers">.
+Extends L<"Handlers" in XML::Compile::SOAP::Client|XML::Compile::SOAP::Client/"Handlers">.
  
 =over 4
 
-=item $obj-E<gt>B<compileClient>(OPTIONS)
+=item $obj-E<gt>B<compileClient>(%options)
 
-See L<XML::Compile::SOAP::Client/"Handlers">
+Inherited, see L<XML::Compile::SOAP::Client/"Handlers">
 
 =back
 
 =head1 DETAILS
 
-See L<documentation in the base class|XML::Compile::SOAP12/"DETAILS">.
+Extends L<"DETAILS" in XML::Compile::SOAP12|XML::Compile::SOAP12/"DETAILS">.
  
 =head1 SEE ALSO
 
-This module is part of XML-Compile-SOAP12 distribution version 3.00,
-built on January 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of XML-Compile-SOAP12 distribution version 3.01,
+built on February 06, 2014. Website: F<http://perl.overmeer.net/xml-compile/>
 
 Other distributions in this suite:
 L<XML::Compile>,

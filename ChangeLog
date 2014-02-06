@@ -4,6 +4,18 @@
 explain differences in WSDL
 http://schemas.xmlsoap.org/wsdl/soap12/soap12WSDL.html
 
+version 3.01: Thu Feb  6 17:07:05 CET 2014
+
+	Fixes:
+	- implementation of the server side
+
+	Improvements:
+	- include reference to sponsor Momac
+	- remove "not usable" warnings
+	- implementation of the server side
+	- change documentation style
+	- remove t/TestTools.pm, not used
+
 version 3.00: Mon Jan  6 01:03:05 CET 2014
 	Implement it for real, thanks to Momac!!  Still work to do on
 	the server side code.

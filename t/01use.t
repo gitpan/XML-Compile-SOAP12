@@ -1,18 +1,17 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use warnings;
 use strict;
 
 use lib 'lib', 't';
 use Test::More tests => 4;
-use TestTools;
+use Log::Report;
 
 # The versions of the following packages are reported to help understanding
 # the environment in which the tests are run.  This is certainly not a
 # full list of all installed modules.
 my @show_versions =
  qw/Test::More
-    Test::Deep
     XML::Compile
     XML::Compile::Tester
     XML::LibXML
