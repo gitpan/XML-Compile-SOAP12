@@ -6,7 +6,7 @@ use warnings;
 use strict;
 
 package XML::Compile::SOAP12;
-our $VERSION = '3.01';
+our $VERSION = '3.02';
 
 use base 'XML::Compile::SOAP';
 

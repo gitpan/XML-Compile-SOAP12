@@ -7,7 +7,7 @@ use warnings;
 use strict;
 
 package XML::Compile::SOAP12::Util;
-our $VERSION = '3.01';
+our $VERSION = '3.02';
 
 use base 'Exporter';
 

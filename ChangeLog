@@ -4,6 +4,12 @@
 explain differences in WSDL
 http://schemas.xmlsoap.org/wsdl/soap12/soap12WSDL.html
 
+version 3.02: Fri Feb  7 09:37:58 CET 2014
+
+	Fixes:
+	- silence complaint about double declared 'our $VERSION'
+	  rt.cpan.org#92796 [Andreas Koenig]
+
 version 3.01: Thu Feb  6 17:07:05 CET 2014
 
 	Fixes:

@@ -6,7 +6,7 @@ use warnings;
 use strict;
 
 package XML::Compile::SOAP12::Operation;
-our $VERSION = '3.01';
+our $VERSION = '3.02';
 
 use base 'XML::Compile::SOAP::Operation';
 
@@ -22,7 +22,7 @@ use XML::Compile::SOAP12::Client;
 use XML::Compile::SOAP12::Server;
 use XML::Compile::SOAP::Extension;
 
-our $VERSION;         # OODoc adds $VERSION to the script
+use vars '$VERSION';         # OODoc adds $VERSION to the script
 $VERSION ||= '(devel)';
 
 # client/server object per schema class, because initiation options
